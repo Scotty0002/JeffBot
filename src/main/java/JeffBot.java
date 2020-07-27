@@ -9,6 +9,11 @@ import java.io.*;
 
 public class JeffBot {
 
+    /**
+     * BOT
+     * @param args
+     * @throws LoginException
+     */
     public static void main(String args[]) throws  LoginException {
         try {
             BufferedReader read = new BufferedReader(new FileReader("src/main/java/config.txt"));
