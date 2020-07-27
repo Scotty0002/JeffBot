@@ -5,14 +5,22 @@ import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 
 import javax.security.auth.login.LoginException;
+import java.io.*;
 
 public class JeffBot {
 
     public static void main(String args[]) throws  LoginException {
+        try {
+            BufferedReader read = new BufferedReader(new FileReader("src/main/java/config.txt"));
+            String token =read.readLine();
+            JDA jda = JDABuilder.createDefault(token).build();
+            jda.addEventListener(new OnImage());
+            jda.addEventListener(new OnAt());
+            jda.addEventListener(new OnWord());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-        JDA jda = JDABuilder.createDefault("NzM3MTc4MTg0NDc0NDI3NDIy.Xx5krw.KF1GWn919wUPq60E7-P4Nf19VOs").build();
-        jda.addEventListener(new OnImage());
-        jda.addEventListener(new OnAt());
-        jda.addEventListener(new OnWord());
+
     }
 }
