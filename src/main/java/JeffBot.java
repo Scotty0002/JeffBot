@@ -1,3 +1,4 @@
+import Commands.Calculate;
 import Events.OnImage;
 import Events.OnAt;
 import Events.OnWord;
@@ -22,6 +23,7 @@ public class JeffBot {
             jda.addEventListener(new OnImage());
             jda.addEventListener(new OnAt());
             jda.addEventListener(new OnWord());
+            jda.addEventListener(new Calculate());
         } catch (IOException e) {
             e.printStackTrace();
         }
