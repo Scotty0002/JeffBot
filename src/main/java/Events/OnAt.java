@@ -19,6 +19,7 @@ public class OnAt extends ListenerAdapter {
         if(event.getMessage().getContentRaw().equalsIgnoreCase("<@!737178184474427422>")){
             File file = new File("src\\main\\resources\\62NYl0C.png");
             event.getChannel().sendFile(file,"62NYl0C.png").complete();
+            event.getChannel().sendMessage("Hi i'm Jeff how can I help");
         }
     }
 
